@@ -8,6 +8,9 @@ Protótipo local do broker para o plugin `secure-input`.
 ./scripts/run-secure-input-broker
 ```
 
+Para instalação persistente, use o unit em
+`packaging/omarchy-secure-input.service` como serviço `systemd --user`.
+
 O broker não possui UI própria. O comando `ui_test.py` simula a futura
 interface Quickshell e deve ser usado somente com segredos fictícios.
 

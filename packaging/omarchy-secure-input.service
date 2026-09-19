@@ -1,0 +1,22 @@
+[Unit]
+Description=Omarchy Secure Input Broker
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/mauriciocunha/DEV/omarchy-plugins
+ExecStart=/home/mauriciocunha/DEV/omarchy-plugins/scripts/run-secure-input-broker
+Restart=on-failure
+RestartSec=2s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+RuntimeDirectory=omarchy-secure-input
+RuntimeDirectoryMode=0700
+ReadWritePaths=%t/omarchy-secure-input
+UMask=0077
+
+[Install]
+WantedBy=graphical-session.target
