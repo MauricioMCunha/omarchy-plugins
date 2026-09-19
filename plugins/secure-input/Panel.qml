@@ -112,12 +112,10 @@ Item {
         var ctx = getContext("2d")
         ctx.reset()
         var accent = root.requests.length ? "#f59e0b" : "#aab4c8"
-        ctx.strokeStyle = accent
         ctx.fillStyle = accent
-        ctx.lineWidth = 1.8
         ctx.lineJoin = "round"
 
-        // Shield outline.
+        // Filled shield silhouette, legible even at bar size.
         ctx.beginPath()
         ctx.moveTo(width * 0.50, height * 0.08)
         ctx.lineTo(width * 0.82, height * 0.20)
@@ -126,9 +124,10 @@ Item {
         ctx.quadraticCurveTo(width * 0.28, height * 0.80, width * 0.22, height * 0.57)
         ctx.lineTo(width * 0.18, height * 0.20)
         ctx.closePath()
-        ctx.stroke()
+        ctx.fill()
 
-        // Keyhole inside the shield.
+        // Cut-out keyhole inside the shield.
+        ctx.fillStyle = "#202020"
         ctx.beginPath()
         ctx.arc(width * 0.50, height * 0.43, width * 0.10, 0, Math.PI * 2)
         ctx.fill()
