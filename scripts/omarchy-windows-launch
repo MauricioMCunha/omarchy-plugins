@@ -11,7 +11,8 @@ readonly SHARED_ANCHOR="/var/lib/omarchy/windows/mounts/users/$(id -u)/shared"
 secure_mount_modes() {
   [[ -d "$SHARED_SOURCE" ]] && chmod 0700 -- "$SHARED_SOURCE" 2>/dev/null || true
   if [[ -d "$SHARED_ANCHOR" ]]; then
-    pkexec /usr/bin/chmod 0700 -- "$SHARED_ANCHOR" >/dev/null 2>&1 || true
+    sudo -n /usr/bin/chmod 0700 -- "$SHARED_ANCHOR" 2>/dev/null ||
+      sudo /usr/bin/chmod 0700 -- "$SHARED_ANCHOR" || return 1
   fi
 }
 
