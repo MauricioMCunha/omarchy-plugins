@@ -93,9 +93,12 @@ Item {
     id: pollTimer
     interval: 1500
     repeat: true
-    running: root.open
+    // O pedido pode nascer fora da barra; a detecção precisa ser automática.
+    running: true
     onTriggered: root.poll()
   }
+
+  Component.onCompleted: root.poll()
 
   Rectangle {
     anchors.fill: parent
