@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Wayland
 import qs.Commons
 import qs.Ui
@@ -22,9 +23,18 @@ Item {
   }
 
   function fallbackScreen() {
+    var focused = Hyprland.focusedMonitor
+    if (focused) {
+      var focusedName = String(focused.name || "")
+      var focusedScreen = screenNamed(focusedName)
+      if (focusedScreen) return focusedScreen
+    }
     return Quickshell.screens.length > 0 ? Quickshell.screens[0] : null
   }
 
+  // O broker pode não conhecer o monitor do processo. Nesse caso, o modal
+  // deve acompanhar o monitor que Hyprland considera focado, não o primeiro
+  // output enumerado pelo Wayland.
   readonly property var targetScreen: screenNamed(root.request ? root.request.screen : "") || fallbackScreen()
 
   Variants {
