@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -u
+
+# Local compatibility wrapper for Omarchy's Windows launcher.
+# The dockurr/windows container changes the shared bind mount mode while it
+# runs. Restore Omarchy's required 0700 mode before and after each session.
+
+readonly SHARED_SOURCE="${HOME}/Windows"
+readonly SHARED_ANCHOR="/var/lib/omarchy/windows/mounts/users/$(id -u)/shared"
+
+secure_mount_modes() {
+  [[ -d "$SHARED_SOURCE" ]] && chmod 0700 -- "$SHARED_SOURCE" 2>/dev/null || true
+  if [[ -d "$SHARED_ANCHOR" ]]; then
+    pkexec /usr/bin/chmod 0700 -- "$SHARED_ANCHOR" >/dev/null 2>&1 || true
+  fi
+}
+
+secure_mount_modes
+/usr/bin/omarchy-windows-vm launch "$@"
+rc=$?
+secure_mount_modes
+exit "$rc"
