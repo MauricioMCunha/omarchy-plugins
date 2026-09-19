@@ -102,42 +102,13 @@ Item {
     radius: height / 2
     color: "transparent"
 
-    Canvas {
-      id: securityIcon
+    Text {
       anchors.centerIn: parent
-      width: Math.min(parent.width, 24)
-      height: Math.min(parent.height, 24)
-
-      onPaint: {
-        var ctx = getContext("2d")
-        ctx.reset()
-        var accent = root.requests.length ? "#f59e0b" : "#aab4c8"
-        ctx.fillStyle = accent
-        ctx.lineJoin = "round"
-
-        // Filled shield silhouette, legible even at bar size.
-        ctx.beginPath()
-        ctx.moveTo(width * 0.50, height * 0.08)
-        ctx.lineTo(width * 0.82, height * 0.20)
-        ctx.lineTo(width * 0.78, height * 0.57)
-        ctx.quadraticCurveTo(width * 0.72, height * 0.80, width * 0.50, height * 0.93)
-        ctx.quadraticCurveTo(width * 0.28, height * 0.80, width * 0.22, height * 0.57)
-        ctx.lineTo(width * 0.18, height * 0.20)
-        ctx.closePath()
-        ctx.fill()
-
-        // Cut-out keyhole inside the shield.
-        ctx.fillStyle = "#202020"
-        ctx.beginPath()
-        ctx.arc(width * 0.50, height * 0.43, width * 0.10, 0, Math.PI * 2)
-        ctx.fill()
-        ctx.fillRect(width * 0.455, height * 0.48, width * 0.09, height * 0.22)
-      }
-
-      Connections {
-        target: root
-        function onRequestsChanged() { securityIcon.requestPaint() }
-      }
+      text: "󰌾"
+      color: root.requests.length ? "#f59e0b" : "#aab4c8"
+      font.family: root.bar ? root.bar.fontFamily : "monospace"
+      font.pixelSize: 19
+      font.bold: true
     }
 
     MouseArea { anchors.fill: parent; onClicked: root.triggerPress(0) }
