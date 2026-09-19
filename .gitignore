@@ -1,0 +1,19 @@
+# Build and runtime artifacts
+dist/
+build/
+target/
+coverage/
+.cache/
+
+# Local secrets and sockets
+.env
+.env.*
+*.sock
+*.socket
+*.key
+*.token
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
