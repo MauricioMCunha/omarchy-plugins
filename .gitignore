@@ -4,6 +4,8 @@ build/
 target/
 coverage/
 .cache/
+__pycache__/
+*.py[cod]
 
 # Local secrets and sockets
 .env
