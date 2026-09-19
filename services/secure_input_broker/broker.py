@@ -39,9 +39,10 @@ class PendingRequest:
 
 
 class Broker:
-    def __init__(self, socket_path: Path, session_token: str, timeout: float) -> None:
+    def __init__(self, socket_path: Path, session_token: str, llm_capability: str, timeout: float) -> None:
         self.socket_path = socket_path
         self.session_token = session_token
+        self.llm_capability = llm_capability
         self.timeout = timeout
         self.pending: dict[str, PendingRequest] = {}
         self.lock = threading.Lock()
@@ -88,6 +89,9 @@ class Broker:
                 return
             kind = message.get("type")
             if kind == "request":
+                if not self._valid_llm_origin(message):
+                    self._send(conn, {"ok": False, "error": "invalid_llm_origin"})
+                    return
                 self._create_request(conn, message)
             elif kind == "approve":
                 self._approve(conn, message)
@@ -98,6 +102,12 @@ class Broker:
             else:
                 self._send(conn, {"ok": False, "error": "unknown_type"})
 
+    def _valid_llm_origin(self, message: dict[str, Any]) -> bool:
+        return (
+            message.get("origin") == "llm"
+            and secrets.compare_digest(str(message.get("capability", "")), self.llm_capability)
+        )
+
     def _create_request(self, conn: socket.socket, message: dict[str, Any]) -> None:
         metadata = {
             "pid": int(message.get("pid", 0)),
@@ -105,6 +115,7 @@ class Broker:
             "cwd": str(message.get("cwd", ""))[:1000],
             "tty": str(message.get("tty", ""))[:300],
             "prompt": str(message.get("prompt", "Password: "))[:300],
+            "screen": str(message.get("screen", ""))[:200],
         }
         request = PendingRequest(
             request_id=uuid.uuid4().hex,
@@ -180,7 +191,7 @@ class Broker:
             removed = request is not None and not request.delivered
             if removed:
                 request.delivered = True
-                request.error = "cancelled"
+                request.error = "cancelado_pelo_usuario"
                 request.decision_event.set()
         self._send(conn, {"ok": removed})
 
@@ -209,12 +220,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--socket", type=Path, required=True)
     parser.add_argument("--token", default=None)
+    parser.add_argument("--llm-capability", default=None)
     parser.add_argument("--timeout", type=float, default=DEFAULT_TIMEOUT)
     args = parser.parse_args()
     token = args.token or os.environ.get("SECURE_INPUT_TOKEN")
-    if not token:
-        parser.error("use --token ou SECURE_INPUT_TOKEN")
-    Broker(args.socket, token, max(1.0, min(args.timeout, 300.0))).serve()
+    capability = args.llm_capability or os.environ.get("SECURE_INPUT_LLM_CAPABILITY")
+    if not token or not capability:
+        parser.error("use --token/SECURE_INPUT_TOKEN e --llm-capability/SECURE_INPUT_LLM_CAPABILITY")
+    Broker(args.socket, token, capability, max(1.0, min(args.timeout, 300.0))).serve()
 
 
 if __name__ == "__main__":

@@ -6,10 +6,15 @@ project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 umask 077
 mkdir -p "$runtime_dir"
 token_file="$runtime_dir/token"
+capability_file="$runtime_dir/llm-capability"
 if [[ ! -s "$token_file" ]]; then
   /usr/bin/python3 -c 'import secrets; print(secrets.token_urlsafe(32))' > "$token_file"
+fi
+if [[ ! -s "$capability_file" ]]; then
+  /usr/bin/python3 -c 'import secrets; print(secrets.token_urlsafe(32))' > "$capability_file"
 fi
 cd "$project_dir"
 exec /usr/bin/python3 -m services.secure_input_broker.broker \
   --socket "$runtime_dir/broker.sock" --token "$(<"$token_file")" \
+  --llm-capability "$(<"$capability_file")" \
   --timeout 30

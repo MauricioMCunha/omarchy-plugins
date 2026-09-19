@@ -31,15 +31,16 @@ Item {
     if (!pollProc.running) pollProc.running = true
   }
 
-  function approve() {
-    if (!root.selected || !secretInput.text) return
+  function approveSecret(secret) {
+    if (!root.selected || !secret) return
     approveProc.command = ["python3", root.bridgePath, "--socket", root.socketPath,
       "--token-file", root.tokenPath, "approve", root.selected.request_id,
       root.selected.nonce]
     approveProc.running = true
-    approveProc.write(secretInput.text + "\n")
-    secretInput.text = ""
+    approveProc.write(secret + "\n")
   }
+
+  function approve() { approveSecret(secretInput.text) }
 
   function cancelRequest() {
     if (!root.selected) return
@@ -69,6 +70,14 @@ Item {
 
   Process { id: approveProc; stdinEnabled: true; stdout: StdioCollector {} ; onExited: { root.selected = null; root.poll() } }
   Process { id: cancelProc; stdout: StdioCollector {} ; onExited: { root.selected = null; root.poll() } }
+
+  SecureOverlay {
+    id: secureOverlay
+    open: root.selected !== null && root.requests.length > 0
+    request: root.selected
+    onApproved: root.approveSecret(secret)
+    onCancelled: root.cancelRequest()
+  }
 
   Timer {
     id: pollTimer

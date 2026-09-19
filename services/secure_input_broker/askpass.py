@@ -32,6 +32,9 @@ def main() -> int:
             "cwd": os.getcwd(),
             "tty": os.environ.get("SECURE_INPUT_TTY", ""),
             "prompt": args.prompt,
+            "origin": "llm",
+            "capability": os.environ.get("SECURE_INPUT_LLM_CAPABILITY", ""),
+            "screen": os.environ.get("SECURE_INPUT_SCREEN", ""),
         },
     )
     if not result.get("ok") or not isinstance(result.get("secret"), str):
