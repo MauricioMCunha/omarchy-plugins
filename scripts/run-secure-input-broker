@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+runtime_dir="${XDG_RUNTIME_DIR:?}/omarchy-secure-input"
+project_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+umask 077
+mkdir -p "$runtime_dir"
+token_file="$runtime_dir/token"
+if [[ ! -s "$token_file" ]]; then
+  /usr/bin/python3 -c 'import secrets; print(secrets.token_urlsafe(32))' > "$token_file"
+fi
+cd "$project_dir"
+exec /usr/bin/python3 -m services.secure_input_broker.broker \
+  --socket "$runtime_dir/broker.sock" --token "$(<"$token_file")" \
+  --timeout 30

@@ -5,7 +5,7 @@ Protótipo local do broker para o plugin `secure-input`.
 ## Executar
 
 ```bash
-python3 -m services.secure_input_broker.broker --socket /tmp/omarchy-secure-input.sock
+./scripts/run-secure-input-broker
 ```
 
 O broker não possui UI própria. O comando `ui_test.py` simula a futura
