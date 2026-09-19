@@ -60,7 +60,7 @@ Item {
           id: card
           anchors.centerIn: parent
           width: Math.min(520, Math.max(360, parent.width - Style.space(48)))
-          height: content.implicitHeight + Style.space(40)
+          height: content.implicitHeight + card.contentTopInset + card.contentBottomInset
           padding: Style.space(20)
           color: Color.background
           borderSpec: Border.surfaceSpec("popups", "border", Color.popups.border, Math.max(1, Style.space(2)))
@@ -68,7 +68,14 @@ Item {
 
           Column {
             id: content
-            anchors.fill: parent
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.topMargin: card.contentTopInset
+            anchors.rightMargin: card.contentRightInset
+            anchors.bottomMargin: card.contentBottomInset
+            anchors.leftMargin: card.contentLeftInset
             spacing: Style.space(10)
 
             Row {
@@ -125,8 +132,9 @@ Item {
             }
 
             BorderSurface {
+              id: detailsCard
               width: parent.width
-              implicitHeight: details.implicitHeight + Style.space(20)
+              implicitHeight: details.implicitHeight + detailsCard.contentTopInset + detailsCard.contentBottomInset
               padding: Style.space(10)
               color: Util.alpha(Color.popups.text, 0.035)
               borderSpec: Border.flat(Util.alpha(Color.popups.border, 0.72), Style.normalBorderWidth)
@@ -134,7 +142,14 @@ Item {
 
               Column {
                 id: details
-                anchors.fill: parent
+                anchors.top: parent.top
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                anchors.left: parent.left
+                anchors.topMargin: detailsCard.contentTopInset
+                anchors.rightMargin: detailsCard.contentRightInset
+                anchors.bottomMargin: detailsCard.contentBottomInset
+                anchors.leftMargin: detailsCard.contentLeftInset
                 spacing: Style.space(6)
 
                 Text {
