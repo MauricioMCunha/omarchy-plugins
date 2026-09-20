@@ -3,6 +3,7 @@ import Quickshell
 import Quickshell.Io
 import qs.Ui
 import qs.Commons
+import "NotifyState.js" as NotifyState
 
 Item {
   id: root
@@ -41,6 +42,23 @@ Item {
   function poll() {
     if (!pollProc.running) pollProc.running = true
     if (!statsProc.running) statsProc.running = true
+  }
+  function notifyNewRequests(list) {
+    var seen = {}
+    var fresh = []
+    for (var i = 0; i < list.length; i++) {
+      seen[list[i].request_id] = true
+      if (NotifyState.claimOnce(list[i].request_id)) fresh.push(list[i])
+    }
+    NotifyState.forgetExcept(seen)
+    if (fresh.length === 0 || notifyProc.running) return
+    var title = fresh.length === 1 ? "Autorização pendente" : (fresh.length + " autorizações pendentes")
+    var body = fresh.length === 1
+      ? (fresh[0].command || "sudo") + "  ·  expira em " + Math.max(0, Math.floor(fresh[0].expires_at - Date.now() / 1000)) + "s"
+      : fresh.map(function (item) { return item.command || "sudo" }).join(", ")
+    notifyProc.command = ["/usr/share/omarchy/bin/omarchy-notification-send",
+      "--app-name", root.commercialName, "-g", "󰌾", "-u", "critical", title, body]
+    notifyProc.running = true
   }
   function metric(name) { return Number(root.metrics[name] || 0) }
   function duration(seconds) {
@@ -92,13 +110,29 @@ Item {
       onStreamFinished: {
         try {
           var value = JSON.parse(text || "{}")
+          var hadPending = root.requests.length > 0
           root.requests = value.requests || []
+          root.notifyNewRequests(root.requests)
+          if (hadPending && root.requests.length === 0 && !dismissNotifyProc.running) {
+            dismissNotifyProc.command = ["/usr/share/omarchy/bin/omarchy-notification-dismiss", "Autorização pendente"]
+            dismissNotifyProc.running = true
+          }
           if (!root.decisionBusy && root.selected && !root.requests.some(function (item) { return item.request_id === root.selected.request_id })) root.selected = null
           if (root.requests.length > 0 && !root.selected) root.selected = root.requests[0]
         } catch (e) { root.requests = [] }
       }
     }
     onExited: pollTimer.restart()
+  }
+
+  Process {
+    id: notifyProc
+    stdout: StdioCollector {}
+  }
+
+  Process {
+    id: dismissNotifyProc
+    stdout: StdioCollector {}
   }
 
   Process {
