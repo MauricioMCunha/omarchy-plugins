@@ -8,7 +8,10 @@ import json
 import sys
 from pathlib import Path
 
-from client import call
+try:
+    from .client import call
+except ImportError:  # execução direta pelo Process do Quickshell
+    from client import call
 
 
 def main() -> int:

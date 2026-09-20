@@ -7,7 +7,10 @@ import os
 import sys
 from pathlib import Path
 
-from client import request_secret
+try:
+    from .client import request_secret
+except ImportError:  # execução direta pelo Process do Quickshell ou sudo askpass
+    from client import request_secret
 
 
 def session_paths() -> tuple[Path, Path, Path]:
