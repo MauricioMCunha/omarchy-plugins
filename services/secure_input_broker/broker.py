@@ -23,6 +23,7 @@ from typing import Any
 
 MAX_LINE = 16 * 1024
 DEFAULT_TIMEOUT = 30.0
+HANDSHAKE_TIMEOUT = 5.0
 
 
 @dataclass
@@ -88,8 +89,20 @@ class Broker:
 
     def _handle(self, conn: socket.socket) -> None:
         with conn:
-            reader = conn.makefile("rb")
-            line = reader.readline(MAX_LINE + 1)
+            # Sem timeout aqui, qualquer processo do mesmo usuário (mesmo sem
+            # token) poderia conectar e nunca enviar dados, prendendo esta
+            # thread para sempre. Não há limite de threads concorrentes, então
+            # isso vira exaustão local. O handshake é a única leitura desta
+            # conexão; respostas subsequentes só enviam, então o timeout curto
+            # não afeta a espera longa pela decisão da UI em _create_request.
+            conn.settimeout(HANDSHAKE_TIMEOUT)
+            try:
+                reader = conn.makefile("rb")
+                line = reader.readline(MAX_LINE + 1)
+            except OSError:
+                return
+            finally:
+                conn.settimeout(None)
             if not line or len(line) > MAX_LINE:
                 return
             try:
@@ -213,7 +226,7 @@ class Broker:
             valid = (
                 request is not None
                 and not request.delivered
-                and request.nonce == nonce
+                and secrets.compare_digest(request.nonce, nonce)
                 and request.expires_at > time.time()
                 and identity_valid
                 and isinstance(secret, str)
