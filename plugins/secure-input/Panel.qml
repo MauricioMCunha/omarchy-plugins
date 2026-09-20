@@ -21,6 +21,7 @@ Item {
   property string pendingApprovalSecret: ""
   property string approvalRequestId: ""
   property string approvalNonce: ""
+  readonly property string commercialName: "Secure Input"
 
   readonly property color foreground: bar && bar.foreground ? bar.foreground : Color.foreground
   readonly property string fontFamily: bar && bar.fontFamily ? bar.fontFamily : Style.font.family
@@ -174,17 +175,19 @@ Item {
   }
   Component.onCompleted: root.poll()
 
-  Rectangle {
+  BarIconButton {
+    id: barButton
     anchors.fill: parent
-    color: "transparent"
-    Text {
-      anchors.centerIn: parent
-      text: "󰌾"
-      color: root.requests.length ? Color.accent : root.foreground
-      font.family: root.fontFamily
-      font.pixelSize: Style.font.icon
+    bar: root.bar
+    text: "󰌾"
+    tooltipText: root.commercialName
+    active: root.open || root.requests.length > 0
+    Accessible.role: Accessible.Button
+    Accessible.name: root.commercialName
+
+    onPressed: function(mouseButton) {
+      if (mouseButton === Qt.LeftButton) root.triggerPress(mouseButton)
     }
-    MouseArea { anchors.fill: parent; onClicked: root.triggerPress(0) }
   }
 
   PopupCard {
