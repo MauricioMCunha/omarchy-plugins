@@ -24,6 +24,11 @@ from typing import Any
 MAX_LINE = 16 * 1024
 DEFAULT_TIMEOUT = 30.0
 HANDSHAKE_TIMEOUT = 5.0
+# Defesa em profundidade: alguém que já tem o token/capability (um processo
+# comprometido do próprio usuário) ainda poderia abrir muitos pedidos
+# concorrentes, cada um prendendo uma thread por até timeout+1s. Isso não
+# afeta o uso normal, que raramente tem mais de um pedido pendente por vez.
+MAX_PENDING = 20
 
 
 @dataclass
@@ -164,9 +169,16 @@ class Broker:
             process_uid=identity["uid"],
         )
         with self.lock:
-            self.pending[request.request_id] = request
-            self.metrics["requests"] += 1
-            self.last_activity_at = time.time()
+            if len(self.pending) >= MAX_PENDING:
+                overflow = True
+            else:
+                overflow = False
+                self.pending[request.request_id] = request
+                self.metrics["requests"] += 1
+                self.last_activity_at = time.time()
+        if overflow:
+            self._send(conn, {"ok": False, "error": "too_many_pending"})
+            return
         self._send(
             conn,
             {
