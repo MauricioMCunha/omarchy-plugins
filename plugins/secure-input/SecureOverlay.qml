@@ -14,11 +14,36 @@ Item {
   property bool submitting: false
   property string pendingSecret: ""
   property int waitSeconds: 0
+  property int secondsRemaining: 0
+  property real totalSeconds: 0
+  readonly property bool expiringSoon: root.secondsRemaining > 0 && root.secondsRemaining <= 10
   signal approved(string secret)
   signal cancelled()
   signal decisionFinished()
 
   onOpenChanged: if (!root.open) root.submitting = false
+
+  function refreshSecondsRemaining() {
+    if (!root.request || !root.request.expires_at) {
+      root.secondsRemaining = 0
+      return
+    }
+    root.secondsRemaining = Math.max(0, Math.round(root.request.expires_at - Date.now() / 1000))
+  }
+
+  onRequestChanged: {
+    refreshSecondsRemaining()
+    root.totalSeconds = root.secondsRemaining
+  }
+
+  Timer {
+    id: expiryTimer
+    interval: 1000
+    repeat: true
+    triggeredOnStart: true
+    running: root.open && !root.submitting && root.request !== null
+    onTriggered: root.refreshSecondsRemaining()
+  }
 
   Timer {
     id: waitTimer
@@ -161,10 +186,36 @@ Item {
 
                 Text {
                   width: parent.width
-                  text: root.submitting ? "WAIT " + root.waitSeconds + "s" : "LLM local  •  solicitação única"
-                  color: Color.accent
+                  text: root.submitting
+                    ? "WAIT " + root.waitSeconds + "s"
+                    : "LLM local  •  expira em " + root.secondsRemaining + "s"
+                  color: root.submitting ? Color.accent : (root.expiringSoon ? Color.urgent : Color.accent)
                   font.family: Style.font.family
                   font.pixelSize: Style.font.caption
+                  font.bold: root.expiringSoon
+                }
+              }
+            }
+
+            Controls.ProgressBar {
+              id: expiryProgress
+              width: parent.width
+              height: Style.space(4)
+              visible: !root.submitting && root.totalSeconds > 0
+              from: 0
+              to: root.totalSeconds
+              value: root.secondsRemaining
+              background: Rectangle {
+                implicitHeight: Style.space(4)
+                radius: Style.space(2)
+                color: Util.alpha(Color.popups.text, 0.12)
+              }
+              contentItem: Item {
+                Rectangle {
+                  width: parent.width * expiryProgress.visualPosition
+                  height: parent.height
+                  radius: Style.space(2)
+                  color: root.expiringSoon ? Color.urgent : Color.accent
                 }
               }
             }
@@ -219,6 +270,18 @@ Item {
                   wrapMode: Text.WordWrap
                   maximumLineCount: 3
                   elide: Text.ElideMiddle
+                  textFormat: Text.PlainText
+                }
+
+                Text {
+                  width: parent.width
+                  visible: !!root.request && root.request.cwd !== ""
+                  text: root.request ? root.request.cwd : ""
+                  color: Util.alpha(Color.popups.text, 0.5)
+                  font.family: Style.font.family
+                  font.pixelSize: Style.font.caption
+                  elide: Text.ElideMiddle
+                  textFormat: Text.PlainText
                 }
 
                 Text {
@@ -230,6 +293,7 @@ Item {
                   font.family: Style.font.family
                   font.pixelSize: Style.font.caption
                   elide: Text.ElideRight
+                  textFormat: Text.PlainText
                 }
               }
             }
