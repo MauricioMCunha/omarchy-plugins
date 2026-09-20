@@ -1,57 +1,103 @@
 # Omarchy Plugins Lab
 
-Monorepo para projetar, implementar e testar plugins e extensões locais do
-Omarchy.
+Plugins Quickshell para o Omarchy, com foco em integração nativa, UX mínima,
+segurança local e desenvolvimento reproduzível.
 
-## Objetivos
+## Primeiro plugin: Secure Input
 
-- manter plugins do Omarchy separados da aplicação COMPASSO e do cofre;
-- compartilhar padrões de UI, IPC, segurança e testes;
-- permitir que novas extensões sejam adicionadas sem alterar
-  `/usr/share/omarchy/`;
-- instalar cada plugin em `~/.config/omarchy/plugins/` somente após validação.
+`secure-input` exibe uma solicitação gráfica para autorizar operações
+privilegiadas iniciadas por uma sessão local. Ele combina:
 
-## Primeiro projeto
+- widget de topbar com tooltip nativo do Omarchy;
+- modal Quickshell com foco automático e fluxo por teclado;
+- broker local em socket Unix;
+- integração limitada com `sudo askpass`;
+- métricas de sessão e expiração de solicitações;
+- especificação OpenSpec e testes automatizados.
 
-`secure-input`: interface gráfica e integração segura para solicitações de
-autorização privilegiada, com plugin Quickshell, broker local e helper
-`sudo askpass`.
+O plugin não captura teclado global, clipboard, PTY ou comandos arbitrários.
+
+## Segurança
+
+O desenho atual usa:
+
+- socket Unix em diretório privado (`0700`) e socket privado (`0600`);
+- token de sessão e capability de origem;
+- `request_id` e nonce criptograficamente aleatórios;
+- uso único, expiração e cancelamento autenticado;
+- validação de PID, UID, horário de início e linha de comando do processo;
+- segredo fora de argumentos, arquivos persistentes, logs e clipboard;
+- `NoNewPrivileges`, `PrivateTmp`, `ProtectSystem=strict` e `UMask=0077`;
+- leitura do material de sessão diretamente do runtime privado, sem exportá-lo
+  para o ambiente do processo `sudo`.
+
+O fluxo usa o mecanismo oficial `sudo -A`/`SUDO_ASKPASS`. O wrapper opcional
+`scripts/secure-input-sudo` altera o PATH somente dentro do processo filho;
+o `sudo` do sistema não é substituído globalmente.
+
+### Avaliação atual
+
+A avaliação interna de maturidade de segurança é **78/100**. Esse número não é
+uma probabilidade de segurança nem uma certificação: representa o estado atual
+dos controles, testes e operação conhecidos neste repositório.
+
+O projeto é adequado para beta privado e desenvolvimento local. Ainda não deve
+ser apresentado como auditado ou seguro para produção sem revisão independente.
+
+Pendências antes de uma publicação pública mais ampla:
+
+1. testar instalação, remoção, rollback e atualização em uma conta limpa;
+2. adicionar `qmllint`, CI de dependências e inspeção automatizada de segredos;
+3. ampliar testes de integração com Quickshell, Omarchy e `sudo` real;
+4. revisar o threat model e o ciclo de vida do plugin com outra pessoa;
+5. documentar o procedimento completo de instalação e recuperação.
+
+## Validação
+
+Execute:
+
+```bash
+python3 -m unittest discover -s tests -p 'test_*.py'
+python3 -m py_compile services/secure_input_broker/*.py plugins/secure-input/*.py
+git diff --check
+```
+
+O conjunto atual cobre autenticação, origem inválida, PID ausente, expiração,
+aprovação, replay, nonce incorreto, cancelamento, askpass e alteração de
+identidade do processo.
+
+## Desenvolvimento local
+
+Para testar o fluxo controlado de `sudo`:
+
+```bash
+scripts/secure-input-run -- sudo id
+```
+
+O broker é executado como serviço `systemd --user`. A instalação do serviço e
+do plugin deve ser explícita; o projeto não altera `/usr/share/omarchy/` nem
+instala componentes silenciosamente.
 
 ## Estrutura
 
 ```text
 omarchy-plugins/
 ├── plugins/              # Plugins instaláveis do Omarchy
-├── services/             # Brokers e serviços locais auxiliares
-├── shared/               # Contratos e utilitários compartilhados
-├── docs/                 # Decisões, segurança e operação
-├── tests/                # Testes de integração e segurança
-└── scripts/              # Build, validação e instalação controlada
+├── services/             # Broker e serviços locais auxiliares
+├── openspec/             # Especificações normativas
+├── docs/                 # Arquitetura, segurança e operação
+├── tests/                # Testes do broker e do askpass
+└── scripts/              # Execução e integração local
 ```
 
-## Regra de segurança
+## Documentação
 
-Nenhum plugin pode receber, registrar, persistir ou transmitir senhas. A UI
-apenas solicita consentimento; qualquer operação privilegiada deve passar por
-um componente local explicitamente delimitado, com contexto verificável,
-timeout e uso único.
+- [OpenSpec do Secure Input](openspec/secure-input.md)
+- [Arquitetura](docs/architecture.md)
+- [Modelo de segurança](docs/security.md)
+- [Revisão para publicação](docs/publishing-security.md)
+- [Graphify](graphify-out/graph.json)
 
-## Estado atual
+## Licença
 
-O `secure-input` possui broker Unix, helper `sudo askpass`, bridge para a UI,
-plugin Quickshell, unit `systemd --user` e testes sem credenciais reais. A
-especificação normativa está em [`openspec/secure-input.md`](openspec/secure-input.md).
-O fluxo exige `sudo -A` quando o processo tem um TTY. `SUDO_ASKPASS` pode ser
-configurado sem substituir `sudo` nem alterar `sudoers`, mas nesta versão do
-sudo isso não elimina a necessidade de `-A` em processos interativos. O
-wrapper `scripts/secure-input-sudo` existe apenas como opção explícita para
-uma sessão controlada que precisa transformar `sudo comando` em askpass.
-
-Para executar um processo de LLM nesse modo controlado, use:
-
-```bash
-scripts/secure-input-run -- seu-comando-da-llm
-```
-
-O `sudo` é sombreado apenas dentro desse processo filho; o PATH do usuário e
-o `/usr/bin/sudo` permanecem inalterados.
+MIT. Consulte [LICENSE](LICENSE).
