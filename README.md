@@ -38,5 +38,20 @@ timeout e uso único.
 
 ## Estado atual
 
-O repositório contém apenas a estrutura inicial. O `secure-input` será
-implementado primeiro em modo de teste, sem conexão com credenciais reais.
+O `secure-input` possui broker Unix, helper `sudo askpass`, bridge para a UI,
+plugin Quickshell, unit `systemd --user` e testes sem credenciais reais. A
+especificação normativa está em [`openspec/secure-input.md`](openspec/secure-input.md).
+O fluxo exige `sudo -A` quando o processo tem um TTY. `SUDO_ASKPASS` pode ser
+configurado sem substituir `sudo` nem alterar `sudoers`, mas nesta versão do
+sudo isso não elimina a necessidade de `-A` em processos interativos. O
+wrapper `scripts/secure-input-sudo` existe apenas como opção explícita para
+uma sessão controlada que precisa transformar `sudo comando` em askpass.
+
+Para executar um processo de LLM nesse modo controlado, use:
+
+```bash
+scripts/secure-input-run -- seu-comando-da-llm
+```
+
+O `sudo` é sombreado apenas dentro desse processo filho; o PATH do usuário e
+o `/usr/bin/sudo` permanecem inalterados.

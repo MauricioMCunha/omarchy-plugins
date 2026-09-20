@@ -4,6 +4,7 @@ build/
 target/
 coverage/
 .cache/
+graphify-out/cache/
 __pycache__/
 *.py[cod]
 

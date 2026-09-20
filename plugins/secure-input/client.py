@@ -1,4 +1,4 @@
-"""Cliente local do protocolo secure-input."""
+"""Cliente mínimo do protocolo Unix local do Secure Input."""
 
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ def call(socket_path: Path, token: str, payload: dict[str, Any]) -> dict[str, An
 
 
 def request_secret(socket_path: Path, token: str, payload: dict[str, Any]) -> dict[str, Any]:
-    """Mantém a conexão aberta até a UI decidir o pedido."""
+    """Create a request and keep the connection open until the UI decides."""
     message = {"token": token, "type": "request", **payload}
     with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as conn:
         conn.settimeout(SOCKET_TIMEOUT)

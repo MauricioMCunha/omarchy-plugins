@@ -1,0 +1,2718 @@
+{
+  "nodes": [
+    {
+      "id": "plugins_secure_input_manifest",
+      "label": "manifest.json",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_schemaversion",
+      "label": "schemaVersion",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_id",
+      "label": "id",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_author",
+      "label": "author",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_license",
+      "label": "license",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_kinds",
+      "label": "kinds",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_entrypoints",
+      "label": "entryPoints",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_entrypoints_barwidget",
+      "label": "barWidget",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_barwidget",
+      "label": "barWidget",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_barwidget_displayname",
+      "label": "displayName",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_barwidget_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_barwidget_category",
+      "label": "category",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_barwidget_allowmultiple",
+      "label": "allowMultiple",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "plugins_secure_input_manifest_barwidget_defaultsection",
+      "label": "defaultSection",
+      "file_type": "code",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "pkg_omarchy_plugins_lab",
+      "label": "omarchy-plugins-lab",
+      "file_type": "code",
+      "type": "package",
+      "ecosystem": "python",
+      "source_file": "pyproject.toml",
+      "source_location": "L1",
+      "version": "0.1.0",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_omarchy_windows_launch",
+      "label": "omarchy-windows-launch",
+      "file_type": "code",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_omarchy_windows_launch__entry",
+      "label": "omarchy-windows-launch script",
+      "file_type": "code",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_omarchy_windows_launch_shared_source",
+      "label": "SHARED_SOURCE",
+      "file_type": "code",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L8",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_omarchy_windows_launch_shared_anchor",
+      "label": "SHARED_ANCHOR",
+      "file_type": "code",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L9",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_omarchy_windows_launch_secure_mount_modes",
+      "label": "secure_mount_modes()",
+      "file_type": "code",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L11",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_run_secure_input_broker",
+      "label": "run-secure-input-broker",
+      "file_type": "code",
+      "source_file": "scripts/run-secure-input-broker",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_run_secure_input_broker__entry",
+      "label": "run-secure-input-broker script",
+      "file_type": "code",
+      "source_file": "scripts/run-secure-input-broker",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "services_init",
+      "label": "services/__init__.py",
+      "file_type": "code",
+      "source_file": "services/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_init_rationale_1",
+      "label": "Servi\u00e7os locais do Omarchy Plugins Lab.",
+      "file_type": "rationale",
+      "source_file": "services/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_init",
+      "label": "secure_input_broker/__init__.py",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_init_rationale_1",
+      "label": "Broker local de entrada segura para plugins Omarchy.",
+      "file_type": "rationale",
+      "source_file": "services/secure_input_broker/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_main",
+      "label": "__main__.py",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/__main__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_py_path",
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "socket",
+      "label": "socket",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_py_any",
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_client",
+      "label": "client.py",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_client_call",
+      "label": "call()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L11",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_client_py_path",
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_client_py_any",
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_client_request_secret",
+      "label": "request_secret()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_client_rationale_1",
+      "label": "Cliente local do protocolo secure-input.",
+      "file_type": "rationale",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_client_rationale_23",
+      "label": "Mant\u00e9m a conex\u00e3o aberta at\u00e9 a UI decidir o pedido.",
+      "file_type": "rationale",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_ui_test",
+      "label": "ui_test.py",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_ui_test_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L14",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_ui_test_rationale_2",
+      "label": "UI de teste em terminal; usar exclusivamente com segredo fict\u00edcio.",
+      "file_type": "rationale",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "path",
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "any",
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_init",
+      "label": "tests/__init__.py",
+      "file_type": "code",
+      "source_file": "tests/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_init_rationale_1",
+      "label": "Testes do Omarchy Plugins Lab.",
+      "file_type": "rationale",
+      "source_file": "tests/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass",
+      "label": "secure-input-askpass",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass__entry",
+      "label": "secure-input-askpass script",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass_socket_path",
+      "label": "socket_path",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L9",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass_token_file",
+      "label": "token_file",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L10",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass_capability_file",
+      "label": "capability_file",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L11",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass_secure_input_socket",
+      "label": "SECURE_INPUT_SOCKET",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L15",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass_secure_input_token",
+      "label": "SECURE_INPUT_TOKEN",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L16",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass_secure_input_llm_capability",
+      "label": "SECURE_INPUT_LLM_CAPABILITY",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L17",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "scripts_secure_input_askpass_pythonpath",
+      "label": "PYTHONPATH",
+      "file_type": "code",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L18",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_askpass",
+      "label": "askpass.py",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_askpass_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_askpass_rationale_2",
+      "label": "Helper compat\u00edvel com sudo askpass. O helper imprime somente a resposta\u2026",
+      "file_type": "rationale",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_bridge",
+      "label": "bridge.py",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_bridge_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_bridge_rationale_2",
+      "label": "CLI sem segredo em argumentos para a futura UI Quickshell.",
+      "file_type": "rationale",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker",
+      "label": "test_broker.py",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest",
+      "label": "BrokerTest",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L17",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_setup",
+      "label": ".setUp()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_teardown",
+      "label": ".tearDown()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L48",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_request_approve_is_single_use",
+      "label": ".test_request_approve_is_single_use()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L57",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_wrong_token_is_rejected",
+      "label": ".test_wrong_token_is_rejected()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L97",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_expired_request_is_rejected",
+      "label": ".test_expired_request_is_rejected()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L101",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval",
+      "label": ".test_askpass_like_request_receives_secret_after_ui_approval()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L126",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval_askpass",
+      "label": "askpass()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L131",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_non_llm_origin_is_rejected",
+      "label": ".test_non_llm_origin_is_rejected()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L170",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_cancel_requires_nonce",
+      "label": ".test_cancel_requires_nonce()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L178",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_missing_pid_is_rejected",
+      "label": ".test_missing_pid_is_rejected()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L195",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret",
+      "label": ".test_askpass_helper_prints_only_approved_secret()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L202",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret_approve",
+      "label": "approve()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L214",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_test_broker_brokertest_test_stats_reports_request_lifecycle",
+      "label": ".test_stats_reports_request_lifecycle()",
+      "file_type": "code",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L244",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker",
+      "label": "broker.py",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_pendingrequest",
+      "label": "PendingRequest",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L29",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker",
+      "label": "Broker",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L44",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L45",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_serve",
+      "label": ".serve()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L57",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_handle",
+      "label": "._handle()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L82",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_valid_llm_origin",
+      "label": "._valid_llm_origin()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L113",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_create_request",
+      "label": "._create_request()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L119",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_pending",
+      "label": "._pending()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L169",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_stats",
+      "label": "._stats()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L184",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_approve",
+      "label": "._approve()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L199",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_cancel",
+      "label": "._cancel()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L227",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_positive_pid",
+      "label": "._positive_pid()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L246",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_process_identity",
+      "label": "._process_identity()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L254",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_identity_matches",
+      "label": "._identity_matches()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L273",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_cleanup_loop",
+      "label": "._cleanup_loop()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L283",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_broker_send",
+      "label": "._send()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L298",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L306",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "services_secure_input_broker_broker_rationale_2",
+      "label": "Broker Unix-socket m\u00ednimo para o prot\u00f3tipo secure-input. O broker mant\u00e9m o\u2026",
+      "file_type": "rationale",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L2",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_schemaversion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_id",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_author",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_license",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_kinds",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_entrypoints",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest_entrypoints",
+      "target": "plugins_secure_input_manifest_entrypoints_barwidget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest",
+      "target": "plugins_secure_input_manifest_barwidget",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest_barwidget",
+      "target": "plugins_secure_input_manifest_barwidget_displayname",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest_barwidget",
+      "target": "plugins_secure_input_manifest_barwidget_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest_barwidget",
+      "target": "plugins_secure_input_manifest_barwidget_category",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest_barwidget",
+      "target": "plugins_secure_input_manifest_barwidget_allowmultiple",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "plugins_secure_input_manifest_barwidget",
+      "target": "plugins_secure_input_manifest_barwidget_defaultsection",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "plugins/secure-input/manifest.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_omarchy_windows_launch",
+      "target": "scripts_omarchy_windows_launch__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_omarchy_windows_launch",
+      "target": "scripts_omarchy_windows_launch_shared_source",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_omarchy_windows_launch",
+      "target": "scripts_omarchy_windows_launch_shared_anchor",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_omarchy_windows_launch",
+      "target": "scripts_omarchy_windows_launch_secure_mount_modes",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_omarchy_windows_launch__entry",
+      "target": "scripts_omarchy_windows_launch_secure_mount_modes",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/omarchy-windows-launch",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "call",
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_run_secure_input_broker",
+      "target": "scripts_run_secure_input_broker__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/run-secure-input-broker",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_init_rationale_1",
+      "target": "services_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_init_rationale_1",
+      "target": "services_secure_input_broker_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_main",
+      "target": "services_secure_input_broker_broker",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/__main__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client",
+      "target": "socket",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client",
+      "target": "typing",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client_call",
+      "target": "services_secure_input_broker_client_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client_call",
+      "target": "services_secure_input_broker_client_py_any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client",
+      "target": "services_secure_input_broker_client_request_secret",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client_request_secret",
+      "target": "services_secure_input_broker_client_py_path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client_request_secret",
+      "target": "services_secure_input_broker_client_py_any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client_rationale_1",
+      "target": "services_secure_input_broker_client",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_client_rationale_23",
+      "target": "services_secure_input_broker_client_request_secret",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/client.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test",
+      "target": "getpass",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test",
+      "target": "services_secure_input_broker_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test",
+      "target": "services_secure_input_broker_ui_test_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test_rationale_2",
+      "target": "services_secure_input_broker_ui_test",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_main",
+      "target": "services_secure_input_broker_broker_main",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/__main__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_ui_test_main",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/ui_test.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_init_rationale_1",
+      "target": "tests_init",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/__init__.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass_socket_path",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass_token_file",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass_capability_file",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass_secure_input_socket",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass_secure_input_token",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass_secure_input_llm_capability",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "scripts_secure_input_askpass",
+      "target": "scripts_secure_input_askpass_pythonpath",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/secure-input-askpass",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass",
+      "target": "services_secure_input_broker_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass",
+      "target": "services_secure_input_broker_askpass_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass_rationale_2",
+      "target": "services_secure_input_broker_askpass",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_askpass_main",
+      "target": "services_secure_input_broker_client_request_secret",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "services/secure_input_broker/askpass.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "services_secure_input_broker_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge",
+      "target": "services_secure_input_broker_bridge_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge_rationale_2",
+      "target": "services_secure_input_broker_bridge",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "subprocess",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "tempfile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "unittest",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "services_secure_input_broker_client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker",
+      "target": "tests_test_broker_brokertest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_setup",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_teardown",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_request_approve_is_single_use",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_wrong_token_is_rejected",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_expired_request_is_rejected",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval",
+      "target": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval_askpass",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L131",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_non_llm_origin_is_rejected",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L170",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_cancel_requires_nonce",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L178",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_missing_pid_is_rejected",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L195",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L202",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret",
+      "target": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret_approve",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L214",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest",
+      "target": "tests_test_broker_brokertest_test_stats_reports_request_lifecycle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_broker.py",
+      "source_location": "L244",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval",
+      "target": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval_askpass",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret",
+      "target": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret_approve",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L229",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_bridge_main",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "services/secure_input_broker/bridge.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_request_approve_is_single_use",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_wrong_token_is_rejected",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_expired_request_is_rejected",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_askpass_like_request_receives_secret_after_ui_approval_askpass",
+      "target": "services_secure_input_broker_client_request_secret",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_non_llm_origin_is_rejected",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_cancel_requires_nonce",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L179",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_missing_pid_is_rejected",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L196",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_askpass_helper_prints_only_approved_secret_approve",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_test_broker_brokertest_test_stats_reports_request_lifecycle",
+      "target": "services_secure_input_broker_client_call",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/test_broker.py",
+      "source_location": "L245",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "secrets",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "socket",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "stat",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "threading",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "uuid",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "dataclasses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "typing",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "services_secure_input_broker_broker_pendingrequest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "services_secure_input_broker_broker_broker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_init",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_serve",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_handle",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "socket",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_valid_llm_origin",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_valid_llm_origin",
+      "target": "any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_create_request",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_create_request",
+      "target": "socket",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_create_request",
+      "target": "any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_pending",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_pending",
+      "target": "socket",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_stats",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_stats",
+      "target": "socket",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_approve",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_approve",
+      "target": "socket",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_approve",
+      "target": "any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_cancel",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_cancel",
+      "target": "socket",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_cancel",
+      "target": "any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_positive_pid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_positive_pid",
+      "target": "any",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_process_identity",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_process_identity",
+      "target": "any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_identity_matches",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_identity_matches",
+      "target": "services_secure_input_broker_broker_pendingrequest",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_cleanup_loop",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L283",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker",
+      "target": "services_secure_input_broker_broker_broker_send",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_send",
+      "target": "socket",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_send",
+      "target": "any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L298",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker",
+      "target": "services_secure_input_broker_broker_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L306",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "services_secure_input_broker_broker_broker_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "services_secure_input_broker_broker_broker_valid_llm_origin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "services_secure_input_broker_broker_broker_create_request",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "services_secure_input_broker_broker_broker_approve",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "services_secure_input_broker_broker_broker_cancel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "services_secure_input_broker_broker_broker_pending",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_handle",
+      "target": "services_secure_input_broker_broker_broker_stats",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_create_request",
+      "target": "services_secure_input_broker_broker_broker_positive_pid",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_create_request",
+      "target": "services_secure_input_broker_broker_broker_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_create_request",
+      "target": "services_secure_input_broker_broker_broker_process_identity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_create_request",
+      "target": "services_secure_input_broker_broker_pendingrequest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_pending",
+      "target": "services_secure_input_broker_broker_broker_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_stats",
+      "target": "services_secure_input_broker_broker_broker_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L197",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_approve",
+      "target": "services_secure_input_broker_broker_broker_identity_matches",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L205",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_approve",
+      "target": "services_secure_input_broker_broker_broker_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L222",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_cancel",
+      "target": "services_secure_input_broker_broker_broker_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L243",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_broker_identity_matches",
+      "target": "services_secure_input_broker_broker_broker_process_identity",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L276",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_main",
+      "target": "services_secure_input_broker_broker_broker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L317",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "services_secure_input_broker_broker_rationale_2",
+      "target": "services_secure_input_broker_broker",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/secure_input_broker/broker.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "extracted_sources": [
+    "/home/mauriciocunha/DEV/omarchy-plugins/services/secure_input_broker/broker.py"
+  ]
+}

@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls as Controls
 import Quickshell
 import Quickshell.Hyprland
 import Quickshell.Wayland
@@ -10,8 +11,42 @@ Item {
 
   property bool open: false
   property var request: null
+  property bool submitting: false
+  property string pendingSecret: ""
+  property int waitSeconds: 0
   signal approved(string secret)
   signal cancelled()
+  signal decisionFinished()
+
+  onOpenChanged: if (!root.open) root.submitting = false
+
+  Timer {
+    id: waitTimer
+    interval: 1000
+    repeat: true
+    onTriggered: {
+      if (root.waitSeconds > 1) {
+        root.waitSeconds -= 1
+        return
+      }
+      stop()
+      root.waitSeconds = 0
+      root.submitting = false
+      root.decisionFinished()
+    }
+  }
+
+  Timer {
+    id: decisionDispatch
+    interval: 1
+    repeat: false
+    onTriggered: {
+      var secret = root.pendingSecret
+      root.pendingSecret = ""
+      if (secret.length > 0) root.approved(secret)
+      else root.cancelled()
+    }
+  }
 
   function screenNamed(name) {
     var wanted = String(name || "")
@@ -52,6 +87,18 @@ Item {
       WlrLayershell.layer: WlrLayer.Overlay
       WlrLayershell.keyboardFocus: root.open ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 
+      Keys.onPressed: function (event) {
+        if (event.isAutoRepeat) return
+        if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
+          passwordInput.submitSecret()
+          event.accepted = true
+        } else if (event.key === Qt.Key_Escape) {
+          passwordInput.cancelDecision()
+          event.accepted = true
+        }
+      }
+      onVisibleChanged: if (visible) Qt.callLater(passwordInput.forceActiveFocus)
+
       Rectangle {
         anchors.fill: parent
         color: Util.alpha(Color.background, 0.72)
@@ -59,9 +106,9 @@ Item {
         BorderSurface {
           id: card
           anchors.centerIn: parent
-          width: Math.min(520, Math.max(360, parent.width - Style.space(48)))
+          width: Math.min(500, Math.max(380, parent.width - Style.space(48)))
           height: content.implicitHeight + card.contentTopInset + card.contentBottomInset
-          padding: Style.space(20)
+          padding: Style.space(22)
           color: Color.background
           borderSpec: Border.surfaceSpec("popups", "border", Color.popups.border, Math.max(1, Style.space(2)))
           radius: Style.cornerRadius
@@ -76,15 +123,15 @@ Item {
             anchors.rightMargin: card.contentRightInset
             anchors.bottomMargin: card.contentBottomInset
             anchors.leftMargin: card.contentLeftInset
-            spacing: Style.space(10)
+            spacing: Style.space(12)
 
             Row {
               width: parent.width
-              spacing: Style.space(10)
+              spacing: Style.space(12)
 
               BorderSurface {
-                width: Style.space(38)
-                height: Style.space(38)
+                width: Style.space(36)
+                height: Style.space(36)
                 anchors.verticalCenter: parent.verticalCenter
                 color: Util.alpha(Color.accent, 0.12)
                 borderSpec: Border.flat(Util.alpha(Color.accent, 0.55), Style.normalBorderWidth)
@@ -101,11 +148,11 @@ Item {
 
               Column {
                 width: parent.width - Style.space(48)
-                spacing: Style.space(2)
+                spacing: Style.space(3)
 
                 Text {
                   width: parent.width
-                  text: "Autorização segura"
+                  text: root.submitting ? "Aguarde" : "Autorização segura"
                   color: Color.popups.text
                   font.family: Style.font.family
                   font.pixelSize: Style.font.title
@@ -114,7 +161,7 @@ Item {
 
                 Text {
                   width: parent.width
-                  text: "LLM local  •  solicitação única"
+                  text: root.submitting ? "WAIT " + root.waitSeconds + "s" : "LLM local  •  solicitação única"
                   color: Color.accent
                   font.family: Style.font.family
                   font.pixelSize: Style.font.caption
@@ -124,6 +171,7 @@ Item {
 
             Text {
               width: parent.width
+              visible: !root.submitting
               text: "Revise a solicitação antes de liberar esta credencial."
               color: Util.alpha(Color.popups.text, 0.68)
               font.family: Style.font.family
@@ -133,9 +181,10 @@ Item {
 
             BorderSurface {
               id: detailsCard
+              visible: !root.submitting
               width: parent.width
               implicitHeight: details.implicitHeight + detailsCard.contentTopInset + detailsCard.contentBottomInset
-              padding: Style.space(10)
+              padding: Style.space(12)
               color: Util.alpha(Color.popups.text, 0.035)
               borderSpec: Border.flat(Util.alpha(Color.popups.border, 0.72), Style.normalBorderWidth)
               radius: Style.cornerRadius
@@ -150,7 +199,7 @@ Item {
                 anchors.rightMargin: detailsCard.contentRightInset
                 anchors.bottomMargin: detailsCard.contentBottomInset
                 anchors.leftMargin: detailsCard.contentLeftInset
-                spacing: Style.space(6)
+                spacing: Style.space(5)
 
                 Text {
                   width: parent.width
@@ -187,6 +236,51 @@ Item {
 
             Text {
               width: parent.width
+              visible: root.submitting
+              text: "WAIT " + root.waitSeconds + "s"
+              color: Color.accent
+              font.family: Style.font.family
+              font.pixelSize: Style.font.display
+              font.bold: true
+              horizontalAlignment: Text.AlignHCenter
+            }
+
+            Text {
+              width: parent.width
+              visible: root.submitting
+              text: "Processando autorização…"
+              color: Util.alpha(Color.popups.text, 0.68)
+              font.family: Style.font.family
+              font.pixelSize: Style.font.caption
+              horizontalAlignment: Text.AlignHCenter
+            }
+
+            Controls.ProgressBar {
+              id: waitProgress
+              width: parent.width
+              height: Style.space(8)
+              visible: root.submitting
+              from: 0
+              to: 3
+              value: 3 - root.waitSeconds
+              background: Rectangle {
+                implicitHeight: Style.space(8)
+                radius: Style.space(4)
+                color: Util.alpha(Color.popups.text, 0.12)
+              }
+              contentItem: Item {
+                Rectangle {
+                  width: parent.width * waitProgress.visualPosition
+                  height: parent.height
+                  radius: Style.space(4)
+                  color: Color.accent
+                }
+              }
+            }
+
+            Text {
+              width: parent.width
+              visible: !root.submitting
               text: root.request && root.request.prompt ? root.request.prompt : "Senha"
               color: Color.popups.text
               font.family: Style.font.family
@@ -197,48 +291,52 @@ Item {
             TextField {
               id: passwordInput
               width: parent.width
-              height: Style.space(44)
+              height: Style.space(42)
               focus: root.open
+              visible: !root.submitting
+              enabled: !root.submitting
+              activeFocusOnPress: true
+              Keys.priority: Keys.BeforeItem
               password: true
               placeholderText: "Digite a senha nesta janela segura"
-              onAccepted: {
-                if (text.length > 0) {
-                  root.approved(text)
-                  text = ""
+              function submitSecret() {
+                if (root.submitting) return
+                root.submitting = true
+                root.waitSeconds = 3
+                waitTimer.restart()
+                root.pendingSecret = text
+                text = ""
+                decisionDispatch.restart()
+              }
+              function cancelDecision() {
+                if (root.submitting) return
+                root.submitting = true
+                root.waitSeconds = 3
+                waitTimer.restart()
+                root.pendingSecret = ""
+                // Cancelamento é uma decisão explícita da pessoa. Não passe
+                // pelo dispatcher da senha: uma string vazia nunca deve ser
+                // interpretada como cancelamento implícito.
+                root.cancelled()
+              }
+              onAccepted: submitSecret()
+              Keys.onPressed: function (event) {
+                if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
+                  submitSecret()
+                  event.accepted = true
                 }
               }
-              Component.onCompleted: forceActiveFocus()
+              Component.onCompleted: Qt.callLater(forceActiveFocus)
             }
 
-            Row {
+            Text {
               width: parent.width
-              spacing: Style.space(10)
-
-              Button {
-                width: (parent.width - parent.spacing) / 2
-                text: "AUTORIZAR"
-                active: true
-                bordered: true
-                focusable: true
-                enabled: passwordInput.text.length > 0
-                onClicked: {
-                  if (passwordInput.text.length > 0) {
-                    root.approved(passwordInput.text)
-                    passwordInput.text = ""
-                  }
-                }
-              }
-
-              Button {
-                width: (parent.width - parent.spacing) / 2
-                text: "FECHAR"
-                accent: Color.urgent
-                foreground: Color.popups.text
-                background: "transparent"
-                bordered: true
-                focusable: true
-                onClicked: root.cancelled()
-              }
+              visible: !root.submitting
+              text: "Enter  autoriza    ·    Esc  cancela"
+              color: Util.alpha(Color.popups.text, 0.56)
+              font.family: Style.font.family
+              font.pixelSize: Style.font.caption
+              horizontalAlignment: Text.AlignRight
             }
           }
         }

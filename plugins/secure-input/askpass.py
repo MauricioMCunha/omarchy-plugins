@@ -1,38 +1,31 @@
 #!/usr/bin/env python3
-"""Helper compatível com sudo askpass.
-
-O helper imprime somente a resposta aprovada pelo broker. Nunca registra o
-valor recebido.
-"""
+"""Askpass entrypoint bundled with the installed secure-input plugin."""
 
 from __future__ import annotations
 
-import argparse
 import os
 import sys
 from pathlib import Path
 
-from .client import request_secret
+from client import request_secret
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument("prompt", nargs="?", default="Password: ")
-    args = parser.parse_args()
     socket_path = os.environ.get("SECURE_INPUT_SOCKET")
     token = os.environ.get("SECURE_INPUT_TOKEN")
     if not socket_path or not token:
         return 2
+    prompt = sys.argv[1] if len(sys.argv) > 1 else "Password: "
     try:
         result = request_secret(
             Path(socket_path),
             token,
             {
                 "pid": os.getpid(),
-                "command": os.environ.get("SECURE_INPUT_COMMAND", "sudo askpass"),
+                "command": os.environ.get("SECURE_INPUT_COMMAND", "sudo"),
                 "cwd": os.getcwd(),
                 "tty": os.environ.get("SECURE_INPUT_TTY", ""),
-                "prompt": args.prompt,
+                "prompt": prompt,
                 "origin": "llm",
                 "capability": os.environ.get("SECURE_INPUT_LLM_CAPABILITY", ""),
                 "screen": os.environ.get("SECURE_INPUT_SCREEN", ""),

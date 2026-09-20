@@ -8,6 +8,17 @@ Protótipo local do broker para o plugin `secure-input`.
 ./scripts/run-secure-input-broker
 ```
 
+Com o broker ativo, o helper pronto para `sudo -A` é
+`scripts/secure-input-askpass`. Exemplo de configuração temporária:
+
+```bash
+export SUDO_ASKPASS="$PWD/scripts/secure-input-askpass"
+sudo -A id
+```
+
+O unit do broker deve estar ativo na sessão do usuário e a UI do plugin deve
+estar carregada para aprovar a solicitação.
+
 Para instalação persistente, use o unit em
 `packaging/omarchy-secure-input.service` como serviço `systemd --user`.
 

@@ -2,12 +2,12 @@
 
 Plugin Omarchy para autorização gráfica de comandos privilegiados.
 
-## Componentes planejados
+## Componentes
 
-- `quickshell/`: UI do plugin;
-- `broker/`: serviço local e protocolo de autorização;
-- `askpass/`: helper compatível com `sudo askpass`;
+- `Panel.qml` e `SecureOverlay.qml`: widget e modal seguro do Quickshell;
+- `services/secure_input_broker/broker.py`: serviço local e protocolo;
+- `services/secure_input_broker/askpass.py`: helper compatível com sudo;
+- `services/secure_input_broker/bridge.py`: bridge sem segredo em argumentos;
 - `tests/`: testes sem credenciais reais.
 
-O código será adicionado em etapas, começando pelo contrato do protocolo e
-pelos testes de segurança.
+O contrato completo está em [`../../openspec/secure-input.md`](../../openspec/secure-input.md).

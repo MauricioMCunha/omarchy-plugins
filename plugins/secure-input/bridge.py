@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
-"""CLI sem segredo em argumentos para a futura UI Quickshell."""
+"""Bridge sem segredo em argumentos para a UI do Secure Input."""
 
 from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
-try:
-    from .client import call
-except ImportError:  # execução direta pelo Process do Quickshell
-    from client import call
+from client import call
 
 
 def main() -> int:
@@ -35,23 +31,10 @@ def main() -> int:
     elif args.action == "stats":
         result = call(args.socket, token, {"type": "stats"})
     elif args.action == "cancel":
-        result = call(
-            args.socket,
-            token,
-            {"type": "cancel", "request_id": args.request_id, "nonce": args.nonce},
-        )
+        result = call(args.socket, token, {"type": "cancel", "request_id": args.request_id, "nonce": args.nonce})
     else:
         secret = sys.stdin.readline().rstrip("\n")
-        result = call(
-            args.socket,
-            token,
-            {
-                "type": "approve",
-                "request_id": args.request_id,
-                "nonce": args.nonce,
-                "secret": secret,
-            },
-        )
+        result = call(args.socket, token, {"type": "approve", "request_id": args.request_id, "nonce": args.nonce, "secret": secret})
     sys.stdout.write(json.dumps(result, separators=(",", ":")) + "\n")
     return 0 if result.get("ok") else 1
 
