@@ -321,8 +321,16 @@ Item {
               }
               onAccepted: submitSecret()
               Keys.onPressed: function (event) {
+                // O TextInput subjacente aceita toda tecla incondicionalmente
+                // em seu próprio processamento, mesmo sem fazer nada com ela.
+                // Por isso o Escape nunca chegava ao Keys.onPressed da janela
+                // (overlayWindow): precisa ser tratado aqui, no mesmo nível
+                // já usado para o Enter, antes que o TextInput o engula.
                 if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
                   submitSecret()
+                  event.accepted = true
+                } else if (event.key === Qt.Key_Escape) {
+                  cancelDecision()
                   event.accepted = true
                 }
               }
