@@ -10,10 +10,22 @@ from pathlib import Path
 from client import request_secret
 
 
+def session_paths() -> tuple[Path, Path, Path]:
+    runtime_dir = Path(
+        os.environ.get("XDG_RUNTIME_DIR", f"/run/user/{os.getuid()}")
+    ) / "omarchy-secure-input"
+    socket_path = Path(os.environ.get("SECURE_INPUT_SOCKET", runtime_dir / "broker.sock"))
+    return socket_path, runtime_dir / "token", runtime_dir / "llm-capability"
+
+
 def main() -> int:
-    socket_path = os.environ.get("SECURE_INPUT_SOCKET")
-    token = os.environ.get("SECURE_INPUT_TOKEN")
-    if not socket_path or not token:
+    socket_path, token_path, capability_path = session_paths()
+    try:
+        token = token_path.read_text(encoding="utf-8").strip()
+        capability = capability_path.read_text(encoding="utf-8").strip()
+    except (OSError, UnicodeError):
+        return 2
+    if not token or not capability:
         return 2
     prompt = sys.argv[1] if len(sys.argv) > 1 else "Password: "
     try:
@@ -27,7 +39,7 @@ def main() -> int:
                 "tty": os.environ.get("SECURE_INPUT_TTY", ""),
                 "prompt": prompt,
                 "origin": "llm",
-                "capability": os.environ.get("SECURE_INPUT_LLM_CAPABILITY", ""),
+                "capability": capability,
                 "screen": os.environ.get("SECURE_INPUT_SCREEN", ""),
             },
         )

@@ -31,8 +31,6 @@ esac
 
 export SUDO_ASKPASS="$askpass"
 export SECURE_INPUT_SOCKET="${SECURE_INPUT_SOCKET:-${runtime_dir}/broker.sock}"
-export SECURE_INPUT_TOKEN="${SECURE_INPUT_TOKEN:-$(<"${SECURE_INPUT_TOKEN_FILE:-${runtime_dir}/token}")}"
-export SECURE_INPUT_LLM_CAPABILITY="${SECURE_INPUT_LLM_CAPABILITY:-$(<"${SECURE_INPUT_CAPABILITY_FILE:-${runtime_dir}/llm-capability}")}"
 export SECURE_INPUT_COMMAND="sudo $*"
 export PYTHONPATH="${plugin_dir}${PYTHONPATH:+:${PYTHONPATH}}"
 

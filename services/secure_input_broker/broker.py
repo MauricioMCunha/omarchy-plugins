@@ -278,11 +278,16 @@ class Broker:
 
     @classmethod
     def _identity_matches(cls, request: PendingRequest) -> bool:
-        if request.process_start_time is None or request.process_uid is None:
+        if (
+            request.process_start_time is None
+            or request.process_cmdline is None
+            or request.process_uid is None
+        ):
             return False
         identity = cls._process_identity(int(request.metadata["pid"]))
         return identity is not None and (
             identity["start_time"] == request.process_start_time
+            and identity["cmdline"] == request.process_cmdline
             and identity["uid"] == request.process_uid
         )
 
