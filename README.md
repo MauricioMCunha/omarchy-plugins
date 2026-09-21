@@ -3,9 +3,9 @@
 Plugins Quickshell para o Omarchy, com foco em integração nativa, UX mínima,
 segurança local e desenvolvimento reproduzível.
 
-## Primeiro plugin: Secure Input
+## Primeiro plugin: Doorman
 
-`secure-input` exibe uma solicitação gráfica para autorizar operações
+`doorman` exibe uma solicitação gráfica para autorizar operações
 privilegiadas iniciadas por uma sessão local. Ele combina:
 
 - widget de topbar com tooltip nativo do Omarchy;
@@ -32,7 +32,7 @@ O desenho atual usa:
   para o ambiente do processo `sudo`.
 
 O fluxo usa o mecanismo oficial `sudo -A`/`SUDO_ASKPASS`. O wrapper opcional
-`scripts/secure-input-sudo` altera o PATH somente dentro do processo filho;
+`scripts/doorman-sudo` altera o PATH somente dentro do processo filho;
 o `sudo` do sistema não é substituído globalmente.
 
 ### Avaliação atual
@@ -58,7 +58,7 @@ Execute:
 
 ```bash
 python3 -m unittest discover -s tests -p 'test_*.py'
-python3 -m py_compile services/secure_input_broker/*.py plugins/secure-input/*.py
+python3 -m py_compile services/doorman_broker/*.py plugins/doorman/*.py
 git diff --check
 ```
 
@@ -71,7 +71,7 @@ identidade do processo.
 Para testar o fluxo controlado de `sudo`:
 
 ```bash
-scripts/secure-input-run -- sudo id
+scripts/doorman-run -- sudo id
 ```
 
 O broker é executado como serviço `systemd --user`. A instalação do serviço e
@@ -92,7 +92,7 @@ omarchy-plugins/
 
 ## Documentação
 
-- [OpenSpec do Secure Input](openspec/secure-input.md)
+- [OpenSpec do Doorman](openspec/doorman.md)
 - [Arquitetura](docs/architecture.md)
 - [Modelo de segurança](docs/security.md)
 - [Revisão para publicação](docs/publishing-security.md)

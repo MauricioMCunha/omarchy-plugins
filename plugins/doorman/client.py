@@ -1,4 +1,4 @@
-"""Cliente mínimo do protocolo Unix local do Secure Input."""
+"""Cliente mínimo do protocolo Unix local do Doorman."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ from typing import Any
 SOCKET_TIMEOUT = 5.0
 MAX_LINE = 16 * 1024
 # Alinhado à folga que o broker aplica ao aguardar a decisão da UI
-# (timeout + 1.0s, limitado a 300s no broker). Ver services/secure_input_broker/broker.py.
+# (timeout + 1.0s, limitado a 300s no broker). Ver services/doorman_broker/broker.py.
 DECISION_WAIT_MARGIN = 2.0
 MAX_DECISION_WAIT = 305.0
 

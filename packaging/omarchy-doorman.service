@@ -1,21 +1,21 @@
 [Unit]
-Description=Omarchy Secure Input Broker
+Description=Omarchy Doorman Broker
 After=graphical-session.target
 PartOf=graphical-session.target
 
 [Service]
 Type=simple
 WorkingDirectory=/home/mauriciocunha/DEV/omarchy-plugins
-ExecStart=/home/mauriciocunha/DEV/omarchy-plugins/scripts/run-secure-input-broker
+ExecStart=/home/mauriciocunha/DEV/omarchy-plugins/scripts/run-doorman-broker
 Restart=on-failure
 RestartSec=2s
 NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=strict
 ProtectHome=read-only
-RuntimeDirectory=omarchy-secure-input
+RuntimeDirectory=omarchy-doorman
 RuntimeDirectoryMode=0700
-ReadWritePaths=%t/omarchy-secure-input
+ReadWritePaths=%t/omarchy-doorman
 UMask=0077
 
 # Hardening extra: o broker fala apenas Unix socket local e lê /proc do

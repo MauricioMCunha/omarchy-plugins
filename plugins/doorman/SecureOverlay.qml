@@ -108,7 +108,7 @@ Item {
       anchors { top: true; bottom: true; left: true; right: true }
       color: "transparent"
       exclusionMode: ExclusionMode.Ignore
-      WlrLayershell.namespace: "mauricio-secure-input"
+      WlrLayershell.namespace: "mauricio-doorman"
       WlrLayershell.layer: WlrLayer.Overlay
       WlrLayershell.keyboardFocus: root.open ? WlrKeyboardFocus.Exclusive : WlrKeyboardFocus.None
 

@@ -1,18 +1,18 @@
-# Secure Input Broker
+# Doorman Broker
 
-Protótipo local do broker para o plugin `secure-input`.
+Protótipo local do broker para o plugin `doorman`.
 
 ## Executar
 
 ```bash
-./scripts/run-secure-input-broker
+./scripts/run-doorman-broker
 ```
 
 Com o broker ativo, o helper pronto para `sudo -A` é
-`scripts/secure-input-askpass`. Exemplo de configuração temporária:
+`scripts/doorman-askpass`. Exemplo de configuração temporária:
 
 ```bash
-export SUDO_ASKPASS="$PWD/scripts/secure-input-askpass"
+export SUDO_ASKPASS="$PWD/scripts/doorman-askpass"
 sudo -A id
 ```
 
@@ -20,7 +20,7 @@ O unit do broker deve estar ativo na sessão do usuário e a UI do plugin deve
 estar carregada para aprovar a solicitação.
 
 Para instalação persistente, use o unit em
-`packaging/omarchy-secure-input.service` como serviço `systemd --user`.
+`packaging/omarchy-doorman.service` como serviço `systemd --user`.
 
 O broker não possui UI própria. O comando `ui_test.py` simula a futura
 interface Quickshell e deve ser usado somente com segredos fictícios.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bridge sem segredo em argumentos para a UI do Secure Input."""
+"""Bridge sem segredo em argumentos para a UI do Doorman."""
 
 from __future__ import annotations
 

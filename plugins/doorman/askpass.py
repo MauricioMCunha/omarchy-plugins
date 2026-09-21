@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Askpass entrypoint bundled with the installed secure-input plugin."""
+"""Askpass entrypoint bundled with the installed doorman plugin."""
 
 from __future__ import annotations
 
@@ -16,8 +16,8 @@ except ImportError:  # execução direta pelo Process do Quickshell ou sudo askp
 def session_paths() -> tuple[Path, Path, Path]:
     runtime_dir = Path(
         os.environ.get("XDG_RUNTIME_DIR", f"/run/user/{os.getuid()}")
-    ) / "omarchy-secure-input"
-    socket_path = Path(os.environ.get("SECURE_INPUT_SOCKET", runtime_dir / "broker.sock"))
+    ) / "omarchy-doorman"
+    socket_path = Path(os.environ.get("DOORMAN_SOCKET", runtime_dir / "broker.sock"))
     return socket_path, runtime_dir / "token", runtime_dir / "llm-capability"
 
 
@@ -37,13 +37,13 @@ def main() -> int:
             token,
             {
                 "pid": os.getpid(),
-                "command": os.environ.get("SECURE_INPUT_COMMAND", "sudo"),
+                "command": os.environ.get("DOORMAN_COMMAND", "sudo"),
                 "cwd": os.getcwd(),
-                "tty": os.environ.get("SECURE_INPUT_TTY", ""),
+                "tty": os.environ.get("DOORMAN_TTY", ""),
                 "prompt": prompt,
                 "origin": "llm",
                 "capability": capability,
-                "screen": os.environ.get("SECURE_INPUT_SCREEN", ""),
+                "screen": os.environ.get("DOORMAN_SCREEN", ""),
             },
         )
     except (OSError, RuntimeError, ValueError):

@@ -1,4 +1,4 @@
-# OpenSpec: secure-input v0.1
+# OpenSpec: doorman v0.1
 
 ## Requisitos funcionais
 

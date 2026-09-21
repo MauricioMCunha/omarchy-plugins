@@ -19,8 +19,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(add_help=False)
     parser.add_argument("prompt", nargs="?", default="Password: ")
     args = parser.parse_args()
-    socket_path = os.environ.get("SECURE_INPUT_SOCKET")
-    token = os.environ.get("SECURE_INPUT_TOKEN")
+    socket_path = os.environ.get("DOORMAN_SOCKET")
+    token = os.environ.get("DOORMAN_TOKEN")
     if not socket_path or not token:
         return 2
     try:
@@ -29,13 +29,13 @@ def main() -> int:
             token,
             {
                 "pid": os.getpid(),
-                "command": os.environ.get("SECURE_INPUT_COMMAND", "sudo askpass"),
+                "command": os.environ.get("DOORMAN_COMMAND", "sudo askpass"),
                 "cwd": os.getcwd(),
-                "tty": os.environ.get("SECURE_INPUT_TTY", ""),
+                "tty": os.environ.get("DOORMAN_TTY", ""),
                 "prompt": args.prompt,
                 "origin": "llm",
-                "capability": os.environ.get("SECURE_INPUT_LLM_CAPABILITY", ""),
-                "screen": os.environ.get("SECURE_INPUT_SCREEN", ""),
+                "capability": os.environ.get("DOORMAN_LLM_CAPABILITY", ""),
+                "screen": os.environ.get("DOORMAN_SCREEN", ""),
             },
         )
     except (OSError, RuntimeError, ValueError):

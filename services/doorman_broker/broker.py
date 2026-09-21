@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Broker Unix-socket mínimo para o protótipo secure-input.
+"""Broker Unix-socket mínimo para o protótipo doorman.
 
 O broker mantém o segredo somente durante a resposta da solicitação. Ele não
 faz logging do payload secreto e invalida cada pedido após um único consumo.
@@ -79,7 +79,7 @@ class Broker:
             server.listen(16)
             cleanup = threading.Thread(target=self._cleanup_loop, daemon=True)
             cleanup.start()
-            print(f"secure-input broker ouvindo em {self.socket_path}", flush=True)
+            print(f"doorman broker ouvindo em {self.socket_path}", flush=True)
             while not self.stop_event.is_set():
                 try:
                     server.settimeout(1.0)
@@ -346,10 +346,10 @@ def main() -> None:
     parser.add_argument("--llm-capability", default=None)
     parser.add_argument("--timeout", type=float, default=DEFAULT_TIMEOUT)
     args = parser.parse_args()
-    token = args.token or os.environ.get("SECURE_INPUT_TOKEN")
-    capability = args.llm_capability or os.environ.get("SECURE_INPUT_LLM_CAPABILITY")
+    token = args.token or os.environ.get("DOORMAN_TOKEN")
+    capability = args.llm_capability or os.environ.get("DOORMAN_LLM_CAPABILITY")
     if not token or not capability:
-        parser.error("use --token/SECURE_INPUT_TOKEN e --llm-capability/SECURE_INPUT_LLM_CAPABILITY")
+        parser.error("use --token/DOORMAN_TOKEN e --llm-capability/DOORMAN_LLM_CAPABILITY")
     Broker(args.socket, token, capability, max(1.0, min(args.timeout, 300.0))).serve()
 
 

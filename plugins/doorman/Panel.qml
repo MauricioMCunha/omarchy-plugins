@@ -22,11 +22,11 @@ Item {
   property string pendingApprovalSecret: ""
   property string approvalRequestId: ""
   property string approvalNonce: ""
-  readonly property string commercialName: "Secure Input"
+  readonly property string commercialName: "Doorman"
 
   readonly property color foreground: bar && bar.foreground ? bar.foreground : Color.foreground
   readonly property string fontFamily: bar && bar.fontFamily ? bar.fontFamily : Style.font.family
-  readonly property string runtimeDir: Quickshell.env("XDG_RUNTIME_DIR") + "/omarchy-secure-input"
+  readonly property string runtimeDir: Quickshell.env("XDG_RUNTIME_DIR") + "/omarchy-doorman"
   readonly property string socketPath: runtimeDir + "/broker.sock"
   readonly property string tokenPath: runtimeDir + "/token"
   function localPath(url) {
@@ -76,7 +76,7 @@ Item {
   function toggleBroker() {
     if (root.serviceBusy) return
     root.serviceDesired = !root.brokerOnline
-    serviceProc.command = ["/usr/bin/systemctl", "--user", root.serviceDesired ? "start" : "stop", "omarchy-secure-input.service"]
+    serviceProc.command = ["/usr/bin/systemctl", "--user", root.serviceDesired ? "start" : "stop", "omarchy-doorman.service"]
     serviceProc.running = true
   }
   function approveSecret(secret) {
@@ -240,7 +240,7 @@ Item {
 
       PanelHero {
         width: parent.width
-        title: "Secure Input"
+        title: "Doorman"
         meta: root.brokerOnline ? "LOCAL SESSION · ONLINE" : "LOCAL SESSION · OFFLINE"
         detail: root.requests.length > 0 ? String(root.requests.length) : ""
         foreground: root.foreground

@@ -1,1 +1,0 @@
-../../plugins/secure-input/bridge.py
